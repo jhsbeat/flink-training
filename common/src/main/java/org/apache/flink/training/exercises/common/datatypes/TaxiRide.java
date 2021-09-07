@@ -52,6 +52,8 @@ public class TaxiRide implements Comparable<TaxiRide>, Serializable {
         this.rideId = rideId;
         this.isStart = isStart;
         this.eventTime = isStart ? g.startTime() : g.endTime();
+        this.startTime = g.startTime();
+        this.endTime = g.endTime();
         this.startLon = g.startLon();
         this.startLat = g.startLat();
         this.endLon = g.endLon();
@@ -85,9 +87,27 @@ public class TaxiRide implements Comparable<TaxiRide>, Serializable {
         this.driverId = driverId;
     }
 
+    public TaxiRide(long rideId, boolean isStart, Instant eventTime, Instant startTime, Instant endTime, float startLon,
+      float startLat, float endLon, float endLat, short passengerCnt, long taxiId, long driverId) {
+        this.rideId = rideId;
+        this.isStart = isStart;
+        this.eventTime = eventTime;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.startLon = startLon;
+        this.startLat = startLat;
+        this.endLon = endLon;
+        this.endLat = endLat;
+        this.passengerCnt = passengerCnt;
+        this.taxiId = taxiId;
+        this.driverId = driverId;
+    }
+
     public long rideId;
     public boolean isStart;
     public Instant eventTime;
+    public Instant startTime;
+    public Instant endTime;
     public float startLon;
     public float startLat;
     public float endLon;

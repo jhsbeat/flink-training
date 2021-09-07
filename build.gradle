@@ -82,6 +82,7 @@ subprojects {
         shadow "org.apache.logging.log4j:log4j-slf4j-impl:${log4jVersion}"
         shadow "org.apache.logging.log4j:log4j-api:${log4jVersion}"
         shadow "org.apache.logging.log4j:log4j-core:${log4jVersion}"
+        shadow 'joda-time:joda-time:2.10.10'
 
         shadow "org.apache.flink:flink-clients_${scalaBinaryVersion}:${flinkVersion}"
         shadow "org.apache.flink:flink-java:${flinkVersion}"
